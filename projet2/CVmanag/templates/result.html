@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Résultats{% endblock %}
+
+{% block content %}
+  <h1>Résultats</h1>
+  <p>Chemin du CV : {{ cv_path }}</p>
+  <p>Score de similarité : {{ cosine_similarity }}</p>
+  <!-- Ajoutez ici d'autres informations spécifiques si nécessaire -->
+{% endblock %}

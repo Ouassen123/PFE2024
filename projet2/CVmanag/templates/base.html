@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Votre Titre par Défaut{% endblock %}</title>
+  <!-- Ajoutez vos liens CSS Bootstrap ici -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy2FZlM6zPeEFe7D9R1kWS1I6nW2"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Ajoutez le lien vers votre fichier CSS personnalisé ici -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <!-- Ajoutez d'autres balises meta, liens, ou scripts au besoin -->
+  
+</head>
+<body>
+  <!-- Barre de navigation Bootstrap -->
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Votre Site</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse animate__animated animate__fadeInRight" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Offres d'emploi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Profil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Postuler</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Se connecter</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <!-- Contenu du corps -->
+  <div class="container mt-3">
+    {% block content %}{% endblock %}
+  </div> 
+
+  <!-- Pied de page Bootstrap -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>Votre pied de page ici</p>
+  </footer>
+
+  <!-- Bootstrap JS et Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXp8I1FURKz9JPhFGY4pG9z8A7b1zwA+e3M"
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy2FZlM6zPeEFe7D9R1kWS1I6nW2"
+  crossorigin="anonymous"></script>
+  <!-- Ajoutez vos autres balises de script ici, par exemple, les fichiers JS personnalisés -->
+</body>
+</html>

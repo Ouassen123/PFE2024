@@ -1,0 +1,28 @@
+<!-- profile.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block content %}
+    <h2>Informations de l'administrateur</h2>
+    <p>Nom d'utilisateur: {{ user_profile.user.username }}</p>
+    <!-- Ajoutez d'autres informations de profil -->
+    
+
+    <h2>Offres postulées par l'administrateur</h2>
+    {% for job_offer in user_profile.user.joboffer_set.all %}
+        <p>{{ job_offer.title }}</p>
+        <!-- Ajoutez d'autres détails de l'offre -->
+    {% endfor %}
+    
+    <h2>Créer une nouvelle offre</h2>
+    <!-- Formulaire pour créer une nouvelle offre -->
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Créer</button>
+    </form>
+{% endblock %}
+

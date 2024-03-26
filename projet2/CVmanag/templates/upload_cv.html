@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Télécharger un CV{% endblock %}
+
+{% block content %}
+  <h1>Télécharger un CV</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="cv_file">Choisir un CV (format PDF) :</label>
+    <input type="file" name="cv_file" accept=".pdf" required>
+    <br>
+    <label for="requirements">Exigences :</label>
+    <textarea name="requirements" rows="4" cols="50" required></textarea>
+    <br>
+    <button type="submit">Soumettre</button>
+  </form>
+{% endblock %}

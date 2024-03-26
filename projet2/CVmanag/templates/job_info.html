@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="job-details">
+    <h1>{{ job.title }}</h1>
+    <p>Salary: {{ job.salary }}</p>
+    <img src="{{ job.image.url }}" alt="{{ job.title }}">
+    <p>{{ job.details }}</p>
+    <a href="{% url 'apply_job' offer_id=offer.id %}" class="btn btn-primary">Postuler</a>
+  </div>
+{% endblock %}

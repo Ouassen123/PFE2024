@@ -1,0 +1,49 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- Header -->
+  <header>
+    <h1>Bienvenue sur notre site</h1>
+    {% if user.is_authenticated %}
+      <a href="{% url 'job_offers' %}">Voir toutes les offres</a>
+      <a href="{% url 'profile' %}">Voir le profil</a>
+      
+    {% else %}
+      <a href="{% url 'login' %}">Se connecter</a>
+    {% endif %}
+  </header>
+
+  <!-- Body -->
+  <section id="offers">
+    <h2>Offres disponibles</h2>
+    {% if offers %}
+      <ul>
+        {% for offer in offers %}
+      <li>
+          <a href="{% url 'job_info' offer_id=offer.id %}">Voir les détails</a>
+          {{ offer.title }}
+          <a href="{% url 'apply_job' offer_id=offer.id %}">Postuler</a>
+      </li>
+    {% endfor %}
+
+      </ul>
+    {% else %}
+      <p>Aucune offre disponible pour le moment.</p>
+    {% endif %}
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="contact">
+        <h3>Contact</h3>
+        <!-- Ajoutez vos informations de contact ici -->
+      </div>
+      <div class="social-media">
+        <!-- Ajoutez vos liens de réseaux sociaux ici -->
+      </div>
+    </div>
+  </footer>
+{% endblock %}

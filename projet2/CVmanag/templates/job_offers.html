@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Offres d'emploi{% endblock %}
+
+{% block content %}
+  <h1>Offres d'emploi</h1>
+  {% for offer in offers %}
+    <h2>{{ offer.title }}</h2>
+    <p>{{ offer.description }}</p>
+    <a href="{% url 'apply_job' offer.id %}">Postuler</a>
+  {% endfor %}
+{% endblock %}
